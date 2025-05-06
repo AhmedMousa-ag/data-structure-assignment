@@ -1,4 +1,4 @@
-from linked_list import DoublyLinkedList
+from data_structures.linked_list import DoublyLinkedList
 
 
 class StackArrayBased:

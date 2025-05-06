@@ -1,5 +1,5 @@
 """This file implements Queues in Python"""
-from linked_list import DoublyLinkedList
+from data_structures.linked_list import DoublyLinkedList
 class QueueArrayBased:
     def __init__(self):
         self.size=-1 #Start the size from -1 as first item is indexed zero 
