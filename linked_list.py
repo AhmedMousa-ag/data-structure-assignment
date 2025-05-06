@@ -88,6 +88,14 @@ class DoublyLinkedList:
     def delete_node_forward(self, node_delete_data):
         """deletes item by traversing forward"""
         delete_node = self.traverse_forward(node_delete_data)
+        self.delete_node(delete_node)
+
+    def delete_node_backward(self, node_delete_data):
+        """deletes item by traversing forward"""
+        delete_node = self.traverse_backward(node_delete_data)
+        self.delete_node(delete_node)
+
+    def delete_node(self,delete_node:Node):
         if not delete_node:
             # print(f"Node with data {node_delete_data} not found")
             return None
@@ -112,33 +120,6 @@ class DoublyLinkedList:
         delete_node.previous.next = delete_node.next
         delete_node.next.previous = delete_node.previous
 
-    def delete_node_backward(self, node_delete_data):
-        """deletes item by traversing forward"""
-        delete_node = self.traverse_backward(node_delete_data)
-        if not delete_node:
-            # print(f"Node with data {node_delete_data} not found")
-            return None
-            
-        # If deleting the head
-        if delete_node == self.head:
-            self.head = delete_node.next
-            if self.head:
-                self.head.previous = None
-            else:
-                # If list becomes empty
-                self.tail = None
-            return
-            
-        # If deleting the tail
-        if delete_node == self.tail:
-            self.tail = delete_node.previous
-            self.tail.next = None
-            return
-            
-        # If deleting a middle node
-        delete_node.previous.next = delete_node.next
-        delete_node.next.previous = delete_node.previous
-   
 if __name__ == "__main__":
     doubly_list = DoublyLinkedList()
     doubly_list.insert_head(1)
@@ -147,8 +128,8 @@ if __name__ == "__main__":
     doubly_list.insert_end(3)
     print(f"{doubly_list}")
     
-    doubly_list.insert_after_node(1, 2)
+    node_2 = doubly_list.insert_after_node(1, 2)
     print(f"{doubly_list}")
     
-    doubly_list.delete_node(2)
+    doubly_list.delete_node(node_2)
     print(f"{doubly_list}")
