@@ -27,9 +27,9 @@ class SinglyLinkedList:
         current_node = self.head
         while current_node:
             if current_node.data == data:
-                break
+                return current_node
             current_node = current_node.next
-        return current_node
+        return None
     
     def insert_head(self, data):
         """Inserts data at the head"""
@@ -116,18 +116,19 @@ class DoublyLinkedList:
     def traverse_forward(self, data):
         current_node = self.head
         while current_node:
+            print(current_node)
             if current_node.data == data:
-                break
+                return current_node
             current_node = current_node.next
-        return current_node
+        return None
     
     def traverse_backward(self, data):
         current_node = self.tail
         while current_node:
             if current_node.data == data:
-                break
+                return current_node
             current_node = current_node.previous
-        return current_node
+        return None
     
     def insert_head(self, data):
         """Inserts data at the head"""

@@ -21,6 +21,11 @@ class StackArrayBased:
         del self.stack[0]
         return item
     
+    def search(self,data):
+        for idx,item in enumerate(self.stack):
+            if item==data:
+                return idx
+        return None
 class StackLinkedList:
     def __init__(self):
         self.stack = DoublyLinkedList()
@@ -38,13 +43,6 @@ class StackLinkedList:
             return None
         self.stack.delete_node_forward(item.data)
         return item
-
-if __name__=="__main__":
-    # stack = StackLinkedList()
-    stack = StackArrayBased()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    print(stack)
-    print(stack.pop())
-    print(stack)
+    
+    def search(self,data):
+        return self.stack.traverse_forward(data)
