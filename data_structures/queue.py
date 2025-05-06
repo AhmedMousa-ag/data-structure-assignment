@@ -45,6 +45,8 @@ class QueueLinkedBased:
         return self.queue
     
     def dequeue(self):
+        if self.queue.head is None:
+            return None
         item=self.queue.head.data
         self.queue.delete_node_forward(item)
         return item
