@@ -29,6 +29,12 @@ class QueueArrayBased:
         # Return the first item
         return item
     
+    def search(self,data):
+        for idx,item in enumerate(self.queue):
+            if item == data:
+                return idx
+        return None
+    
 
 
 class QueueLinkedBased:
@@ -50,7 +56,9 @@ class QueueLinkedBased:
         item=self.queue.head.data
         self.queue.delete_node_forward(item)
         return item
-
+    
+    def search(self,data):
+        return self.queue.traverse_forward(data)
 
 
 if __name__=="__main__":
