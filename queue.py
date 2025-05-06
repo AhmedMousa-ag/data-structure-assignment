@@ -45,14 +45,15 @@ class QueueLinkedBased:
         return self.queue
     
     def dequeue(self):
-        item=self.queue.tail.data
-        self.queue.delete_node_backward(item)
+        item=self.queue.head.data
+        self.queue.delete_node_forward(item)
         return item
 
 
 
 if __name__=="__main__":
-    queue = QueueArrayBased()
+    # queue = QueueArrayBased()
+    queue = QueueLinkedBased()
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
