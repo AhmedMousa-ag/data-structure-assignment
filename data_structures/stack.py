@@ -34,6 +34,8 @@ class StackLinkedList:
     
     def pop(self):
         item = self.stack.head
+        if item is None:
+            return None
         self.stack.delete_node_forward(item.data)
         return item
 
