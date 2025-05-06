@@ -38,7 +38,8 @@ class StackLinkedList:
         return item
 
 if __name__=="__main__":
-    stack = StackLinkedList()
+    # stack = StackLinkedList()
+    stack = StackArrayBased()
     stack.push(1)
     stack.push(2)
     stack.push(3)
